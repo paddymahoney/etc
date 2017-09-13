@@ -1,0 +1,10 @@
+[Unit]
+Description=Start ethminer to locally mine
+Requires=network.target
+[Service]
+Type=simple
+User=ubuntu
+ExecStart=/home/ubuntu/cpp-ethereum/build/ethminer/ethminer -U -F http://localhost:8545 
+Restart=on-failure
+[Install]
+WantedBy=multi-user.target

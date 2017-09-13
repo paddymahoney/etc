@@ -1,0 +1,10 @@
+[Unit]
+Description=Start geth
+Requires=network.target
+[Service]
+Type=simple
+User=ubuntu
+ExecStart=/usr/bin/geth --rpc --rpccorsdomain localhost
+Restart=on-failure
+[Install]
+WantedBy=multi-user.target
